@@ -24,7 +24,7 @@ router.post('/', (req, res) => {
         //validate request
         if(!req.file){
 
-            return res.json({error:"All fiels are required."});
+            return res.json({error:"All fiedls are required."});
         }
 
         
@@ -55,7 +55,6 @@ router.post('/send', async (req, res) => {
   }
   // Get data from db 
     const file = await File.findOne({ uuid: uuid });
-    console.log(file);
     if(file.sender) {
       return res.status(422).send({ error: 'Email already sent once.'});
     }
